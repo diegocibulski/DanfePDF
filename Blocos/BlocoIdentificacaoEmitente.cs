@@ -7,7 +7,7 @@ namespace DanfePDF.Blocos
     internal class BlocoIdentificacaoEmitente : BlocoBase
     {
         public const float LarguraCampoChaveNFe = 93F;
-        public const float AlturaLinha1 = 30;
+        public const float AlturaLinha1 = 38;
 
         NumeroNfSerie2 ifdNfe;
         IdentificacaoEmitente idEmitente;
@@ -17,10 +17,10 @@ namespace DanfePDF.Blocos
 
             var textoConsulta = new TextoSimples(Estilo, Strings.TextoConsulta)
             {
-                Height = 8,
+                Height = 9,
                 AlinhamentoHorizontal = AlinhamentoHorizontal.Centro,
                 AlinhamentoVertical = AlinhamentoVertical.Centro,
-                TamanhoFonte = 9
+                TamanhoFonte = 10
             };
 
             var campoChaveAcesso = new Campo("Chave de Acesso", Formatador.FormatarChaveAcesso(ViewModel.ChaveAcesso), estilo, AlinhamentoHorizontal.Centro) { Height = Constantes.CampoAltura };

@@ -31,7 +31,7 @@ namespace DanfePDF
             Colunas = new List<TabelaColuna>();
             Linhas = new List<List<string>>();
             LinhaAtual = 0;
-            TamanhoFonteCabecalho = 6;
+            TamanhoFonteCabecalho = 6.75F;
 
             PaddingHorizontal = 0.6F;
             PaddingSuperior = 0.75F;
@@ -40,8 +40,8 @@ namespace DanfePDF
             // 7.7.7 Conteúdo dos Campos do Quadro “Dados dos Produtos/Serviços”
             // Deverá ter tamanho mínimo de seis(6) pontos, ou 17 CPP.
 
-            FonteCorpo = estilo.CriarFonteRegular(6F);
-            FonteCabecalho = estilo.CriarFonteRegular(6F);
+            FonteCorpo = estilo.CriarFonteRegular(6.75F);
+            FonteCabecalho = estilo.CriarFonteRegular(6.75F);
         }
 
         public Tabela ComColuna(float larguraP, AlinhamentoHorizontal ah, params String[] cabecalho)

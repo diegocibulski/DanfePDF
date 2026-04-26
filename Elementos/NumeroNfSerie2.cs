@@ -39,13 +39,13 @@ namespace DanfePDF
             var rp1 = BoundingBox.InflatedRetangle(1F, 0.5F, paddingHorizontal);
             var rp2 = rp1;
 
-            var f1 = Estilo.CriarFonteNegrito(12);
+            var f1 = Estilo.CriarFonteNegrito(14);
             var f1h = f1.AlturaLinha;
             gfx.DrawString("DANFE", rp2, f1, AlinhamentoHorizontal.Centro);
 
             rp2 = rp2.CutTop(f1h + 0.5F);
 
-            var f2 = Estilo.CriarFonteRegular(8F);
+            var f2 = Estilo.CriarFonteRegular(9F);
             var f2h = (float)f2.AlturaLinha;
 
             var ts = new TextStack(rp2)
@@ -69,7 +69,7 @@ namespace DanfePDF
             .AddLine("1 - SAÍDA", f2);
             ts.Draw(gfx);
 
-            float rectEsSize = 1.75F * f2h;
+            float rectEsSize = 1.9F * f2h;
             var rectEs = new RectangleF(rp2.Right - rectEsSize, rp2.Y + (2F * f2h - rectEsSize) / 2F, rectEsSize, rectEsSize);
 
             gfx.StrokeRectangle(rectEs, 0.25F);
@@ -77,8 +77,8 @@ namespace DanfePDF
             gfx.DrawString(ViewModel.TipoNF.ToString(), rectEs, Estilo.FonteNumeroFolhas, AlinhamentoHorizontal.Centro, AlinhamentoVertical.Centro);
 
 
-            var f4 = Estilo.FonteNumeroFolhas;
-            var f4h = Estilo.FonteNumeroFolhas.AlturaLinha;
+            var f4 = Estilo.CriarFonteNegrito(11F);
+            var f4h = f4.AlturaLinha;
 
             rp2.Height = 2F * f4h * TextStack.DefaultLineHeightScale + f2h;
             rp2.Y = rp1.Bottom - rp2.Height;
@@ -93,7 +93,7 @@ namespace DanfePDF
 
             ts.Draw(gfx);
 
-            RetanguloNumeroFolhas = new RectangleF(rp1.Left, rp1.Bottom - Estilo.FonteNumeroFolhas.AlturaLinha, rp1.Width, Estilo.FonteNumeroFolhas.AlturaLinha);
+            RetanguloNumeroFolhas = new RectangleF(rp1.Left, rp1.Bottom - f4.AlturaLinha, rp1.Width, f4.AlturaLinha);
         }
     }
 }

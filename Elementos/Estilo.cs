@@ -26,9 +26,9 @@ namespace DanfePDF
 
         public Estilo(pcf.Font fontRegular, pcf.Font fontBold, pcf.Font fontItalic, float tamanhoFonteCampoCabecalho = 6, float tamanhoFonteConteudo = 10)
         {
-            PaddingHorizontal = 0.75F;
-            PaddingSuperior = 0.65F;
-            PaddingInferior = 0.3F;
+            PaddingHorizontal = 1.0F;
+            PaddingSuperior = 0.8F;
+            PaddingInferior = 0.45F;
 
             FonteInternaRegular = fontRegular;
             FonteInternaNegrito = fontBold;
@@ -37,8 +37,8 @@ namespace DanfePDF
             FonteCampoCabecalho = CriarFonteRegular(tamanhoFonteCampoCabecalho);
             FonteCampoConteudo = CriarFonteRegular(tamanhoFonteConteudo);
             FonteCampoConteudoNegrito = CriarFonteNegrito(tamanhoFonteConteudo);
-            FonteBlocoCabecalho = CriarFonteRegular(7);
-            FonteNumeroFolhas = CriarFonteNegrito(10F);
+            FonteBlocoCabecalho = CriarFonteRegular(7.5F);
+            FonteNumeroFolhas = CriarFonteNegrito(11F);
             FonteTamanhoMinimo = 5.75F;
         }
 
